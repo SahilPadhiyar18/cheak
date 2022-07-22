@@ -13,20 +13,22 @@ def home_page():
 
 @app.route('/datapage', methods=['GET', 'POST']) 
 def data_page():
-    conn = psycopg2.connect(DATABASE_URL, sslmode='require')
-    conn
-    cur = conn.cursor()
-    cur.execute('SELECT name FROM logindata;')
-    data = cur.fetchall()
-    # df = pd.DataFrame(data)
-    cur.close()
-    conn.close()
-    dates = data 
-    times = data  
-    state = data  
-    onbye = data  
-    return render_template('datapage.html',data = dates[::-1] ,data1 = times[::-1],status = state[::-1],onby=onbye[::-1])
-
+    try:
+        conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+        conn
+        cur = conn.cursor()
+        cur.execute('SELECT name FROM logindata;')
+        data = cur.fetchall()
+        # df = pd.DataFrame(data)
+        cur.close()
+        conn.close()
+        dates = data 
+        times = data  
+        state = data  
+        onbye = data  
+        return render_template('datapage.html',data = dates[::-1] ,data1 = times[::-1],status = state[::-1],onby=onbye[::-1])
+    except:
+        return "pass"
 
 @app.route('/home', methods=['GET', 'POST']) 
 def data():
