@@ -1,9 +1,5 @@
-from telnetlib import STATUS
-from this import d
-from click import password_option
 from flask import Flask, render_template, request, jsonify
 from datetime import datetime
-import json
 import os
 import psycopg2
 
@@ -38,7 +34,7 @@ def data():
     # times = db.session.query(Logindata.email).all() 
     # state = db.session.query(Logindata.passsword).all() 
     # return render_template('data.html',data = dates[::-1] ,data1 = times[::-1],status = state[::-1])
-    render_template('user.html')
+    return render_template('user.html')
 
 @app.route('/switch', methods=['POST'])
 def aaa():
@@ -79,5 +75,6 @@ if __name__ == '__main__':
     # db.switch.drop()
     app.jinja_env.auto_reload = True
     app.config['TEMPLATES_AUTO_RELOAD'] = True
-    app.run(host='0.0.0.0', port=85)
+    app.run()
+    # app.run(host='0.0.0.0', port=85)
         
