@@ -1,4 +1,4 @@
-﻿aniso8601==9.0.1
+aniso8601==9.0.1
 anyio==3.5.0
 APScheduler==3.9.1
 argon2-cffi==21.3.0
@@ -64,6 +64,7 @@ notebook-shim==0.1.0
 numpy==1.23.1
 outcome==1.1.0
 packaging==21.3
+pandas==1.4.3
 pandocfilters==1.5.0
 parsedatetime==2.6
 parso==0.8.3
@@ -86,6 +87,8 @@ PySocks==1.7.1
 python-dateutil==2.8.2
 pytz==2022.1
 pytz-deprecation-shim==0.1.0.post0
+pywin32==304
+pywinpty==2.0.5
 pyzmq==22.3.0
 recurrent==0.4.1
 requests==2.27.1
